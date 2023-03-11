@@ -1,0 +1,571 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: "Inter", sans-serif;
+  --tipo-titular: "Playfair Display", serif;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before, *::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* (Opcional) */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* (Opcional) */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-titular);
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  /* (Opcional) */
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+  width: 100%;
+  padding: 1em;
+  position: fixed;
+  z-index: 2;
+  background-color: black;
+}
+.header__wrapper {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__h1 {
+  --tipo-principal: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  transition: all 0.5s ease;
+}
+.header__menu {
+  width: 3em;
+  height: 3em;
+  border: 0.125em solid white;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .header__menu {
+    display: flex;
+  }
+}
+.header__barra {
+  width: 100%;
+  height: 0.125em;
+  background-color: white;
+  transition: all 0.5s ease;
+  position: absolute;
+}
+.header__barra.arriba {
+  width: 60%;
+  top: 20%;
+  left: 20%;
+}
+.header__barra.medio {
+  width: 40%;
+  top: calc(50% - 0.0625em);
+  left: 20%;
+}
+.header__barra.abajo {
+  width: 20%;
+  bottom: 20%;
+  right: 20%;
+}
+.header__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.header__svg {
+  width: 2em;
+  height: 2em;
+}
+.header__ul {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+@media screen and (max-width: 750px) {
+  .header__ul {
+    display: none;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: white;
+  transition: all 0.5s ease;
+  transform: translateX(100%);
+}
+.menu.active {
+  transform: translateX(0%);
+}
+.menu__wrapper {
+  position: relative;
+  top: 7vh;
+}
+.menu__row {
+  margin: 0 0 7vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .menu__row {
+    flex-direction: column;
+  }
+}
+.menu__col {
+  flex-basis: 50%;
+  position: relative;
+}
+.menu__li {
+  margin: 0 0 1em;
+}
+.menu__a.color {
+  color: rgb(242, 242, 99);
+}
+.menu__h3 {
+  font-size: 3em;
+}
+@media (max-width: 600px) {
+  .menu__h3 {
+    font-size: 2em;
+  }
+}
+.menu__footer {
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  color: rgb(242, 242, 99);
+}
+
+.inicio {
+  font-family: var(--tipo-titular);
+  width: 100%;
+  max-width: 1450px;
+  height: 90vh;
+  margin: 5em auto;
+  padding: 0 2em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("../assets/blanconegro.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+@media screen and (max-width: 900px) {
+  .inicio {
+    background-position: bottom;
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 550px) {
+  .inicio {
+    background-position: bottom;
+    height: 50vh;
+  }
+}
+.inicio__texto {
+  animation: inicio__texto 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes inicio__texto {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.inicio__h2 {
+  font-size: 5em;
+  font-weight: 600;
+}
+@media screen and (max-width: 550px) {
+  .inicio__h2 {
+    font-size: 3em;
+  }
+}
+.inicio__span {
+  display: block;
+  justify-content: flex-end;
+  color: rgb(242, 242, 99);
+}
+.inicio__h3 {
+  font-size: 3em;
+  padding: 2em 0;
+}
+@media screen and (max-width: 750px) {
+  .inicio__h3 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .inicio__h3 {
+    font-size: 1.5em;
+  }
+}
+
+.about {
+  width: 100%;
+  padding: 5em 2em;
+  background-color: rgb(242, 242, 99);
+}
+.about__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+.about__h2 {
+  font-size: 5em;
+  font-weight: 600;
+  margin: 0 0 1em;
+  color: black;
+  font-family: var(--tipo-titular);
+}
+@media screen and (max-width: 550px) {
+  .about__h2 {
+    font-size: 3em;
+  }
+}
+.about__p {
+  color: black;
+  font-weight: 400;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 0.5em 0;
+  font-family: var(--tipo-principal);
+}
+@media screen and (max-width: 550px) {
+  .about__p {
+    font-size: 1.1em;
+  }
+}
+
+.works {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 5em 2em;
+}
+.works__h2 {
+  font-size: 5em;
+  text-align: end;
+  font-weight: 600;
+  color: rgb(242, 242, 99);
+  font-family: var(--tipo-titular);
+}
+@media screen and (max-width: 550px) {
+  .works__h2 {
+    font-size: 3em;
+  }
+}
+.works__grid {
+  width: 100%;
+  text-align: center;
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+@media screen and (max-width: 900px) {
+  .works__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.works__trabajos {
+  width: 80%;
+  min-height: 20vh;
+  margin: 3em auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .works__trabajos {
+    width: 90%;
+  }
+}
+.works__a {
+  width: 100%;
+}
+.works__img {
+  width: 100%;
+  margin: auto;
+  height: 289.88px;
+  transition: 5s all linear;
+}
+.works__img.jello-vertical {
+  animation: jello-vertical 1s linear;
+}
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.works__p {
+  margin: 1em 0;
+  font-size: 2em;
+}
+@media screen and (max-width: 550px) {
+  .works__p {
+    font-size: 1.3em;
+  }
+}
+.works__p.color {
+  color: rgb(242, 242, 99);
+}
+
+.contact {
+  width: 100%;
+  padding: 5em 2em;
+  background-color: rgb(242, 242, 99);
+  color: black;
+}
+.contact__container {
+  max-width: 1400px;
+  margin: auto;
+}
+.contact__h2 {
+  font-size: 5em;
+  font-weight: 600;
+  margin: 0 0 1em;
+  color: black;
+  font-family: var(--tipo-titular);
+}
+@media screen and (max-width: 550px) {
+  .contact__h2 {
+    font-size: 3em;
+  }
+}
+.contact__texto {
+  width: 100%;
+  text-align: center;
+}
+.contact__texto__h3 {
+  font-size: 3em;
+  font-family: var(--tipo-titular);
+  font-weight: 600;
+}
+@media screen and (max-width: 550px) {
+  .contact__texto__h3 {
+    font-size: 2em;
+  }
+}
+.contact__texto__p {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em 0;
+}
+@media screen and (max-width: 550px) {
+  .contact__texto__p {
+    font-size: 1.1em;
+  }
+}
+.contact__enlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+.contact__enlaces__a {
+  font-size: 1.5em;
+}
+@media screen and (max-width: 550px) {
+  .contact__enlaces__a {
+    font-size: 1.1em;
+  }
+}
+.contact__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+.contact__wrapper__a {
+  font-size: 3em;
+  margin: 1em 0;
+}
+@media screen and (max-width: 550px) {
+  .contact__wrapper__a {
+    font-size: 2em;
+  }
+}
+.contact__footer {
+  width: 100%;
+  text-align: center;
+}
+.contact__footer__p {
+  font-size: 1.5em;
+  margin: 0 0 2em;
+}/*# sourceMappingURL=index.css.map */
