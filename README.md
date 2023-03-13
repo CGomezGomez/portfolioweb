@@ -2,7 +2,7 @@
 ![Imagen del proyecto]( https://github.com/CGomezGomez/portfolioweb/blob/main/assets/portada.jpg)
 
 ## Ejemplo en vivo
-- [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto)
+- [URL-de-github-pages-de-este-proyecto](https://cgomezgomez.github.io/portfolioweb/)
 
 ## Descripción 📑
 
