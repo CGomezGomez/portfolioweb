@@ -6,14 +6,13 @@
     const headerMenu   = header.querySelector('.header__menu')
     const menu         = document.querySelector('.menu')
     const menuA        = menu.querySelectorAll('.menu__a') 
-    
+
     const headerMenuHandler = () => {
         menu.classList.toggle('active')
     }
 
     headerMenu.addEventListener('click', headerMenuHandler)
 
-    
     menuA.forEach((eachA, i)=>{
         menuA[i].addEventListener('click',()=>{
             menuA.forEach((eachA, j)=>{
@@ -39,5 +38,5 @@
              })
         })
     })  
-    
+
 })();

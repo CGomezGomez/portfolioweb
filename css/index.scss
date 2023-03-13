@@ -266,6 +266,10 @@
         max-width: 1400px;
         margin: auto;
     }
+    &__animado {
+        opacity: 0;
+        transition: all 0.5s ;
+    }
     &__h4 {
     
         @media screen and (max-width: 750px) {
@@ -304,6 +308,7 @@
             
         }
     }
+
 }
 
 .works {

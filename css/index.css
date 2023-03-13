@@ -410,6 +410,10 @@ body {
   max-width: 1400px;
   margin: auto;
 }
+.about__animado {
+  opacity: 0;
+  transition: all 0.5s;
+}
 @media screen and (max-width: 750px) {
   .about__h4 {
     display: flex;
