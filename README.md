@@ -24,7 +24,7 @@ Si quieres hechas un vistazo al proyecto, te recomiendo:
 ## Autor ✒️
 **CARLOS GOMEZ**
 
-* [micorreo@midominio.com](cggomez93@gmail.com)
+* [cggomez93@gmail.com](cggomez93@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/cgomezgomez/)
 * [Porfolio web](https://cgomezgomez.github.io/portfolioweb/)
 
