@@ -19,7 +19,7 @@ Si quieres hechas un vistazo al proyecto, te recomiendo:
 
 ![Captura del proyecto](https://github.com/CGomezGomez/portfolioweb/blob/main/assets/portada.jpg)
 ![Captura del proyecto](https://github.com/CGomezGomez/portfolioweb/blob/main/assets/secciones.jpg)
-
+![Captura del proyecto]((https://github.com/CGomezGomez/portfolioweb/blob/main/assets/menu.jpg))]
 
 ## Autor ✒️
 **CARLOS GOMEZ**
