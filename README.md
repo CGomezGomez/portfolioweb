@@ -1,5 +1,5 @@
 # PortFolio Web
-![Imagen del proyecto]( https://github.com/CGomezGomez/portfolioweb/blob/main/assets/capturapantalla.jpg)
+![Imagen del proyecto]( https://github.com/CGomezGomez/portfolioweb/blob/main/assets/portada.jpg)
 
 ## Ejemplo en vivo
 - [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto)
@@ -17,7 +17,7 @@ Este es mi Portfolio Web , donde podreis encontrar los trabajos realizados duran
 ## Vista previa del proyecto
 Si quieres hechas un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://github.com/CGomezGomez/portfolioweb/blob/main/assets/capturapantalla.jpg)
+![Captura del proyecto](https://github.com/CGomezGomez/portfolioweb/blob/main/assets/portada.jpg)
 ![Captura del proyecto](https://github.com/CGomezGomez/portfolioweb/blob/main/assets/secciones.jpg)
 
 
