@@ -1,4 +1,4 @@
-# PortFolio Web
+# PorFolio Web
 ![Imagen del proyecto]( https://github.com/CGomezGomez/portfolioweb/blob/main/assets/portada.jpg)
 
 ## Ejemplo en vivo
@@ -6,7 +6,7 @@
 
 ## Descripción 📑
 
-Este es mi Portfolio Web , donde podreis encontrar los trabajos realizados durante el curso y mis proyectos personales.
+Este es mi Porfolio Web , donde podreis encontrar los trabajos realizados durante el curso y mis proyectos personales.
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
